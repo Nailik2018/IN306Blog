@@ -13,5 +13,4 @@ public class BlogRessource {
     public String hallo(){
         return "Willkommen auf meinen Blog!!";
     }
-
 }
