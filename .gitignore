@@ -41,7 +41,3 @@ nb-configuration.xml
 
 # Plugin directory
 /.quarkus/cli/plugins/
-
-docker-compose.yml
-Dockerfile
-src/main/resources/application.properties
