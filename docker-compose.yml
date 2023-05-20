@@ -8,10 +8,10 @@ services:
     container_name: my_blog
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: x
-      MYSQL_DATABASE: x
-      MYSQL_USER: x
-      MYSQL_PASSWORD: x
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: my_blog
+      MYSQL_USER: blogger
+      MYSQL_PASSWORD: travel
     ports:
       - "3307:3307"
 
