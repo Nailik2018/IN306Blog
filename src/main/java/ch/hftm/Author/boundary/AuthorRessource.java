@@ -1,16 +1,16 @@
-package ch.hftm;
+package ch.hftm.Author.boundary;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-@Path("/blog")
-public class BlogRessource {
+@Path("/author")
+public class AuthorRessource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hallo(){
-        return "Willkommen auf meinen Blog!!";
+        return "Author";
     }
 }
