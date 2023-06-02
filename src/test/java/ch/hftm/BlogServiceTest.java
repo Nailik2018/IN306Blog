@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
-import ch.hftm.blog.boundary.BlogService;
+import ch.hftm.blog.control.BlogService;
 import ch.hftm.blog.entity.Blog;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package ch.hftm.blog.controll;
+package ch.hftm.blog.control;
 
 import java.util.ArrayList;
 import java.util.List;

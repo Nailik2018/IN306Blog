@@ -1,6 +1,6 @@
 package ch.hftm.blog;
 
-import ch.hftm.blog.boundary.BlogService;
+import ch.hftm.blog.control.BlogService;
 import ch.hftm.blog.entity.Blog;
 import io.quarkus.runtime.StartupEvent;
 import jakarta.enterprise.context.ApplicationScoped;

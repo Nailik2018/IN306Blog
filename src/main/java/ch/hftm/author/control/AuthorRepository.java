@@ -1,7 +1,7 @@
-package ch.hftm.Author.controll;
+package ch.hftm.author.control;
 
-import ch.hftm.Author.entry.Author;
-import ch.hftm.blog.controll.BlogRepository;
+import ch.hftm.author.entry.Author;
+import ch.hftm.blog.control.BlogRepository;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 

@@ -1,9 +1,9 @@
-package ch.hftm.blog.boundary;
+package ch.hftm.blog.control;
 
 import java.util.List;
 
 import ch.hftm.blog.entity.Blog;
-import ch.hftm.blog.controll.BlogRepository;
+import ch.hftm.blog.control.BlogRepository;
 import jakarta.transaction.Transactional;
 import org.jboss.logging.Logger;
 

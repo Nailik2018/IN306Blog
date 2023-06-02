@@ -1,4 +1,4 @@
-package ch.hftm.Author.boundary;
+package ch.hftm.author.boundary;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

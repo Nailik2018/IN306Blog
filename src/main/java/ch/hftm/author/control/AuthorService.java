@@ -1,7 +1,7 @@
-package ch.hftm.Author.boundary;
+package ch.hftm.author.control;
 
-import ch.hftm.Author.controll.AuthorRepository;
-import ch.hftm.Author.entry.Author;
+import ch.hftm.author.control.AuthorRepository;
+import ch.hftm.author.entry.Author;
 import jakarta.enterprise.context.Dependent;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;

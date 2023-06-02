@@ -1,4 +1,4 @@
-package ch.hftm.Author.entry;
+package ch.hftm.author.entry;
 
 import ch.hftm.blog.entity.Blog;
 
