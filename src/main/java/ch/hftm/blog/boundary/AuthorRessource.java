@@ -1,24 +1,23 @@
 package ch.hftm.blog.boundary;
 
-import ch.hftm.blog.control.BlogRepository;
-import ch.hftm.blog.entity.Blog;
+import ch.hftm.blog.control.AuthorRepository;
+import ch.hftm.blog.entity.Author;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
-
 import java.util.List;
 
-@Path("/blog")
-public class BlogRessource {
+@Path("/author")
+public class AuthorRessource {
 
     @Inject
-    BlogRepository blogRepository;
+    AuthorRepository authorRepository;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Blog> getBlogs(){
-        return blogRepository.listAll();
+    public List<Author> getAuthors() {
+        return authorRepository.listAll();
     }
 }
