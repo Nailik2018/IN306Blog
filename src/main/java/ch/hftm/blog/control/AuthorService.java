@@ -4,8 +4,10 @@ import ch.hftm.blog.entity.Author;
 import jakarta.enterprise.context.Dependent;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
+import org.jboss.logging.Logger;
+
 import java.util.List;
-import java.util.logging.Logger;
+//import java.util.logging.Logger;
 
 @Dependent
 public class AuthorService {
@@ -14,17 +16,17 @@ public class AuthorService {
     AuthorRepository authorRepository;
 
     @Inject
-//    Logger logger;
+    Logger logger;
 
     public List<Author> getAuthors(){
         var authors = authorRepository.listAll();
-//        logger.info("Returning " + authors.size() + " Authors");
+        logger.info("Returning " + authors.size() + " Authors");
         return authors;
     }
 
     @Transactional
     public void addAuthor(Author author){
-//        logger.info("Adding author " + author.getFirstname() + " " + author.getLastname());
+        logger.info("Adding author " + author.getFirstname() + " " + author.getLastname());
         authorRepository.persist(author);
     }
 }
