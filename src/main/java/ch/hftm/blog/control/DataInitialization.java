@@ -13,6 +13,8 @@ public class DataInitialization {
 
     @Inject
     BlogService blogService;
+
+    @Inject
     AuthorService authorService;
 
     @Transactional
@@ -37,7 +39,7 @@ public class DataInitialization {
         Author unknown = new Author();
         unknown.setFirstname("Unknown");
         unknown.setLastname("Unknown");
-//        blog1.setAuthor(kilian);
+//        blog1.setAuthor(kilian.getId());
 //        blog2.setAuthor(kilian);
 //        blog3.setAuthor(kilian);
         blogService.addBlog(blog1);

@@ -13,6 +13,8 @@ phpmyadmin im Webbrowser http://localhost:8181/
 ## Version 0.2.1
 Ki-Lian
 
+## Swagger
+http://localhost:8080/q/swagger-ui/
 
 # code-with-quarkus
 
