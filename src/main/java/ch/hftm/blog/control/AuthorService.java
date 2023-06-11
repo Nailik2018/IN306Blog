@@ -7,7 +7,6 @@ import jakarta.transaction.Transactional;
 import org.jboss.logging.Logger;
 
 import java.util.List;
-//import java.util.logging.Logger;
 
 @Dependent
 public class AuthorService {
