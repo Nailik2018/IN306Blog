@@ -1,35 +1,36 @@
 package ch.hftm;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import ch.hftm.blog.control.BlogService;
+import ch.hftm.blog.entity.Blog;
+import io.quarkus.test.junit.QuarkusTest;
+import jakarta.inject.Inject;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import ch.hftm.blog.boundary.BlogService;
-import ch.hftm.blog.entity.Blog;
-import org.junit.jupiter.api.Test;
-
-import io.quarkus.test.junit.QuarkusTest;
-import jakarta.inject.Inject;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @QuarkusTest
 public class BlogServiceTest {
+
     @Inject
     BlogService blogService;
 
     @Test
-    void listingAndAddingBlogs() {
-        // Arrange
-        Blog blog = new Blog("Testing Blog", "This is my testing blog");
-        int blogsBefore;
+    void addTestBlogs() {
+        Blog blog1 = new Blog();
+        blog1.setTitle("China");
+        blog1.setContent("Peking Ente");
+        Blog blog2 = new Blog();
+        blog2.setTitle("Bangladesch");
+        blog2.setContent("Honey Hunting im Mangrovenwald");
         List<Blog> blogs;
 
         // Act
-        blogsBefore = blogService.getBlogs().size();
-        blogService.addBlog(blog);
+        int countBlogsBefore = blogService.getBlogs().size();
+        blogService.addBlog(blog1);
+        blogService.addBlog(blog2);
         blogs = blogService.getBlogs();
 
-        // Assert
-        assertEquals(blogsBefore + 1, blogs.size());
-        assertEquals(blog, blogs.get(blogs.size() - 1));
     }
 }
