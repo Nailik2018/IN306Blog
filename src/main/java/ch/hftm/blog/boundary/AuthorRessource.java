@@ -22,7 +22,7 @@ public class AuthorRessource {
     }
 
     @GET
-    @Path("/{id}")
+    @Path("{id}")
     public Author getAuthorById(@PathParam("id") Long id) {
         return authorService.getAuthorById(id);
     }

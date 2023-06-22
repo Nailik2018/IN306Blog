@@ -22,7 +22,7 @@ public class BlogRessource {
     }
 
     @GET
-    @Path("/{id}")
+    @Path("{id}")
     public Blog getBlogById(@PathParam("id") Long id) {
         return blogService.getBlogById(id);
     }
