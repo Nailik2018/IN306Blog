@@ -10,8 +10,9 @@ cmd öffnen
 cd ins Verzeichnis Dockerfile und docker-compose.yml navigieren
 docker compose up -d
 phpmyadmin im Webbrowser http://localhost:8181/
-## Version 0.2.1
-Ki-Lian
+## Version 0.3.0
+### Features
+SWAGGER, CRUD Blog und Author, POST, DELETE, PUT und GET
 
 ## Swagger
 http://localhost:8080/q/swagger-ui/
