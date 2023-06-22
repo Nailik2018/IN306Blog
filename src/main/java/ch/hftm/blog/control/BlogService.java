@@ -18,17 +18,17 @@ public class BlogService {
     AuthorRepository authorRepository;
 
     @Inject
-//    Logger logger;
+    Logger logger;
 
     public List<Blog> getBlogs() {
         var blogs = blogRepository.listAll();
-//        logger.info("Returning " + blogs.size() + " blogs");
+        logger.info("Returning " + blogs.size() + " blogs");
         return blogs;
     }
 
     @Transactional
     public void addBlog(Blog blog) {
-//        logger.info("Adding blog " + blog.getTitle());
+        logger.info("Adding blog " + blog.getTitle());
         blogRepository.persist(blog);
     }
 }

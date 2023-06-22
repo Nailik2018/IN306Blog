@@ -9,7 +9,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import java.util.List;
 
-@Path("/author")
+@Path("author")
 public class AuthorRessource {
 
     @Inject
