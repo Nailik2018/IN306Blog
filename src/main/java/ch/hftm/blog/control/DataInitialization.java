@@ -20,7 +20,7 @@ public class DataInitialization {
     @Transactional
     public void init(@Observes StartupEvent event) {
         // Initialize Data (only if there is no Data around)
-//        createSomeBlogsAndAuthors();
+        createSomeBlogsAndAuthors();
     }
 
     public void createSomeBlogsAndAuthors(){
