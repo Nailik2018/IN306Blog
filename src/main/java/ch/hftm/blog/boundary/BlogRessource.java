@@ -1,6 +1,5 @@
 package ch.hftm.blog.boundary;
 
-import ch.hftm.blog.control.BlogRepository;
 import ch.hftm.blog.control.BlogService;
 import ch.hftm.blog.entity.Blog;
 import jakarta.inject.Inject;

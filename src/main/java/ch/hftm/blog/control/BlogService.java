@@ -11,6 +11,7 @@ import jakarta.inject.Inject;
 
 @Dependent
 public class BlogService {
+
     @Inject
     BlogRepository blogRepository;
 
@@ -19,7 +20,7 @@ public class BlogService {
 
     public List<Blog> getBlogs() {
         var blogs = blogRepository.listAll();
-        logger.info("Alle Blogs " + blogs.size() + " blogs");
+        logger.info("Alle Blogs: " + blogs.size() + " blogs");
         return blogs;
     }
 
@@ -29,14 +30,14 @@ public class BlogService {
 
     @Transactional
     public void addBlog(Blog blog) {
-        logger.info("Adding blog " + blog.getTitle());
+        logger.info("Blog hinzufügen: " + blog.getTitle());
         blogRepository.persist(blog);
     }
 
     @Transactional
     public void updateBlog(Blog blog) {
         blogRepository.persist(blog);
-        logger.info("Update Blog: " + blog.getId());
+        logger.info("Blog updaten: " + blog.getId());
     }
 
     @Transactional
@@ -44,7 +45,7 @@ public class BlogService {
         Blog blog = (Blog) blogRepository.findById(id);
         if (blog != null) {
             blogRepository.delete(blog);
-            logger.info("Lösche Blog: " + id);
+            logger.info("Blog löschen: " + id);
         }
     }
 }
