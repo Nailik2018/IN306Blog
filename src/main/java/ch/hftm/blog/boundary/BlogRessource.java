@@ -15,10 +15,19 @@ public class BlogRessource {
     @Inject
     BlogService blogService;
 
+//    @GET
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public List<Blog> getBlogs(){
+//        return blogService.getBlogs();
+//    }
+
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<Blog> getBlogs(){
-        return blogService.getBlogs();
+    public List<Blog> getEntries(@QueryParam("search") String search) {
+        if (search == null || search.isBlank()) {
+            return blogService.getBlogs();
+        }else{
+            return blogService.findBlogs(search);
+        }
     }
 
     @GET

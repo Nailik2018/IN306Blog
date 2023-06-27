@@ -28,6 +28,12 @@ public class BlogService {
         return (Blog) blogRepository.findById(id);
     }
 
+    public List<Blog> findBlogs(String search) {
+        var blogs = blogRepository.find("title like ?1 or content like ?1", "%" + search + "%").list();
+        logger.info("Gefunden " + blogs.size() + " Anzahl Blogs");
+        return blogs;
+    }
+
     @Transactional
     public void addBlog(Blog blog) {
         logger.info("Blog hinzufügen: " + blog.getTitle());
