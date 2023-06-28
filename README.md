@@ -1,5 +1,16 @@
 # IN306Blog
 
+## Version 0.4.0
+Eigene Error Klasse,
+HeaderParameter,
+Put war bereits drin Version 0.3.0
+
+## Bedienung per URL GET
+http://localhost:8080/blogs/1
+http://localhost:8080/blogs
+http://localhost:8080/author
+http://localhost:8080/author/1
+
 ## Technologies
 docker image und container mysql und phpmyadmin
 mysql port 3307 
