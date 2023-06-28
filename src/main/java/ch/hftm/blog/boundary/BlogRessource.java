@@ -2,9 +2,11 @@ package ch.hftm.blog.boundary;
 
 import ch.hftm.blog.control.BlogService;
 import ch.hftm.blog.entity.Blog;
+import ch.hftm.blog.errors.BlogException;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.*;
+
 import java.util.List;
 
 @Path("blogs")
@@ -14,6 +16,8 @@ public class BlogRessource {
 
     @Inject
     BlogService blogService;
+
+    BlogException blogException;
 
 //    @GET
 //    @Produces(MediaType.APPLICATION_JSON)
@@ -27,6 +31,9 @@ public class BlogRessource {
         if (search == null || search.isBlank()) {
             return blogService.getBlogs();
         }else{
+            if(!password.equals("password")){
+                throw new BlogException("Password ist nicht korrekt", 401);
+            }
             return blogService.findBlogs(search);
         }
     }
@@ -36,6 +43,14 @@ public class BlogRessource {
     public Blog getBlogById(@PathParam("id") Long id) {
         return blogService.getBlogById(id);
     }
+
+//    @GET
+//    @Path("{id}")
+//    public Response getBlogById(@PathParam("id") Long id) {
+//        var blog = this.blogService.getBlogById(id);
+//        // Keine Anhung warum das nicht funktioniert
+//        return Response.ok().entity(blog).header(name:"info", value:"Bitter version 2 Vewrenwnden").build();
+//    }
 
     @POST
     public void addBlog(Blog blog) {
