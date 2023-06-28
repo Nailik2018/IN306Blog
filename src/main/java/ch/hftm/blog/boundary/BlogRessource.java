@@ -22,7 +22,8 @@ public class BlogRessource {
 //    }
 
     @GET
-    public List<Blog> getEntries(@QueryParam("search") String search) {
+    public List<Blog> getEntries(@QueryParam("search") String search, @HeaderParam("password") String password) {
+        System.out.println("Password: " + password);
         if (search == null || search.isBlank()) {
             return blogService.getBlogs();
         }else{
