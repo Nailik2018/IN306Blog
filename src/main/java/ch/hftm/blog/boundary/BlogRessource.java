@@ -4,6 +4,7 @@ import ch.hftm.blog.control.BlogService;
 import ch.hftm.blog.entity.Blog;
 import ch.hftm.blog.errors.BlogException;
 import jakarta.inject.Inject;
+import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.*;
 
@@ -53,7 +54,7 @@ public class BlogRessource {
 //    }
 
     @POST
-    public void addBlog(Blog blog) {
+    public void addBlog(@Valid Blog blog) {
         this.blogService.addBlog(blog);
     }
 
