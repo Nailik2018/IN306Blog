@@ -6,7 +6,9 @@ import ch.hftm.blog.errors.BlogException;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.UriInfo;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import java.util.List;
@@ -51,7 +53,7 @@ public class AuthorRessource {
     }
 
     @POST
-    public void addAuthor(@Valid Author author) {
+    public void addAuthor(@Valid Author author, @Context UriInfo uriInfo) {
         this.authorService.addAuthor(author);
     }
 

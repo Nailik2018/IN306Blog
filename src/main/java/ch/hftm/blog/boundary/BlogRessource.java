@@ -60,7 +60,8 @@ public class BlogRessource {
 //    }
 
     @POST
-    public void addBlog(@Valid Blog blog) {
+    public void addBlog(@Valid Blog blog, @Context UriInfo uriInfo) {
+        System.out.println("URI: " + uriInfo.getAbsolutePath());
         this.blogService.addBlog(blog);
     }
 
