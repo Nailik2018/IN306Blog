@@ -4,6 +4,7 @@ import ch.hftm.blog.control.AuthorService;
 import ch.hftm.blog.entity.Author;
 import ch.hftm.blog.errors.BlogException;
 import jakarta.inject.Inject;
+import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
@@ -50,7 +51,7 @@ public class AuthorRessource {
     }
 
     @POST
-    public void addAuthor(Author author) {
+    public void addAuthor(@Valid Author author) {
         this.authorService.addAuthor(author);
     }
 

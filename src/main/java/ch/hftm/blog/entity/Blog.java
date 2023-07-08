@@ -21,8 +21,8 @@ public class Blog {
 //    @NotNull
     @NotBlank(message = "Der Titel darf nicht leer sein")
     @Size.List({
-        @Size(min = 3, message = "Der Titel muss mindestens 3 Zeichen lang sein"),
-        @Size(max = 50, message = "Der Titel darf maximal 50 Zeichen lang sein")
+        @Size(min = 2, message = "Der Titel muss mindestens 2 Zeichen lang sein"),
+        @Size(max = 128, message = "Der Titel darf maximal 128 Zeichen lang sein")
     })
     private String title;
     private String content;
