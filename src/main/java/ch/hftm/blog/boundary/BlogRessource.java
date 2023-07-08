@@ -33,7 +33,8 @@ public class BlogRessource {
             return blogService.getBlogs();
         }else{
             if(!password.equals("password")){
-                throw new BlogException("Password ist nicht korrekt", 401);
+//                throw new BlogException("Password ist nicht korrekt", 401);
+                blogException = new BlogException("Password ist nicht korrekt", 401);
             }
             return blogService.findBlogs(search);
         }

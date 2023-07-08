@@ -27,6 +27,12 @@ public class AuthorService {
         return (Author) authorRepository.findById(id);
     }
 
+    public List<Author> findAuthors(String search) {
+        var authors = authorRepository.find("firstname like ?1 or lastname like ?1", "%" + search + "%").list();
+        logger.info("Gefunden " + authors.size() + " Anzahl Authors");
+        return authors;
+    }
+
     @Transactional
     public void addAuthor(Author author){
         logger.info("Author hinzufügen: " + author.getFirstname() + " " + author.getLastname());
