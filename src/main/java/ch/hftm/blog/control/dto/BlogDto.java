@@ -2,7 +2,7 @@ package ch.hftm.blog.control.dto;
 
 import ch.hftm.blog.entity.Blog;
 
-public interface BlogDtos {
+public interface BlogDto {
 
     public record NewBlogDto(String title, String content) {
         public Blog toBlog() {

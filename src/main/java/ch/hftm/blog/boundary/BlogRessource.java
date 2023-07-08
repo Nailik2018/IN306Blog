@@ -1,7 +1,7 @@
 package ch.hftm.blog.boundary;
 
 import ch.hftm.blog.control.BlogService;
-import ch.hftm.blog.control.dto.BlogDtos;
+import ch.hftm.blog.control.dto.BlogDto;
 import ch.hftm.blog.entity.Blog;
 import ch.hftm.blog.errors.BlogException;
 import jakarta.inject.Inject;
@@ -69,7 +69,7 @@ public class BlogRessource {
     @APIResponse(responseCode = "201", description = "Jupii new Blog created :-)")
     @APIResponse(responseCode = "418", description = "Ich bin ein Tea Pot :-(")
     @POST
-    public Response addBlog(@Valid BlogDtos.NewBlogDto newBlogDto, @Context UriInfo uriInfo) {
+    public Response addBlog(@Valid BlogDto.NewBlogDto newBlogDto, @Context UriInfo uriInfo) {
         System.out.println("URI: " + uriInfo.getAbsolutePath());
         var id = this.blogService.addBlogDto(newBlogDto);
         var uri = uriInfo.getAbsolutePathBuilder().path(Long.toString(id)).build();
