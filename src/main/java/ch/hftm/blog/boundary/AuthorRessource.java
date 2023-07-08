@@ -6,7 +6,11 @@ import ch.hftm.blog.errors.BlogException;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
+
 import java.util.List;
+
+@Tag(name="Author REST API")
 
 @Path("author")
 @Produces(MediaType.APPLICATION_JSON)

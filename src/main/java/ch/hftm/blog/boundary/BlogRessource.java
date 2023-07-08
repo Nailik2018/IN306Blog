@@ -7,8 +7,10 @@ import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.*;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import java.util.List;
+@Tag(name="Blog REST API")
 
 @Path("blogs")
 @Produces(MediaType.APPLICATION_JSON)
@@ -35,11 +37,14 @@ public class BlogRessource {
             if(!password.equals("password")){
 //                throw new BlogException("Password ist nicht korrekt", 401);
                 blogException = new BlogException("Password ist nicht korrekt", 401);
+            }else{
+
             }
             return blogService.findBlogs(search);
         }
     }
 
+//    @Tag(name="Blog Get by ID")
     @GET
     @Path("{id}")
     public Blog getBlogById(@PathParam("id") Long id) {
