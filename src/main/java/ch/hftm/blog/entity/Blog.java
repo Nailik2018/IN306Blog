@@ -1,5 +1,6 @@
 package ch.hftm.blog.entity;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -17,6 +18,7 @@ import lombok.Setter;
 public class Blog {
     @Id
     @GeneratedValue
+    @JsonbTransient
     private long id;
 //    @NotNull
     @NotBlank(message = "Der Titel darf nicht leer sein")
@@ -26,6 +28,11 @@ public class Blog {
     })
     private String title;
     private String content;
+
+    public Blog(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
 
     @ManyToOne
     @JoinColumn(name = "author_id", referencedColumnName = "ID")

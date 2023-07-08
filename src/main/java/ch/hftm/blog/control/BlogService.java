@@ -2,6 +2,7 @@ package ch.hftm.blog.control;
 
 import java.util.List;
 
+import ch.hftm.blog.control.dto.BlogDtos;
 import ch.hftm.blog.entity.Blog;
 import jakarta.transaction.Transactional;
 import org.jboss.logging.Logger;
@@ -38,6 +39,15 @@ public class BlogService {
     public void addBlog(Blog blog) {
         logger.info("Blog hinzufügen: " + blog.getTitle());
         blogRepository.persist(blog);
+    }
+
+    @Transactional
+    public long addBlogDto(BlogDtos.NewBlogDto newBlogDto) {
+        logger.info("Blog hinzufügen: " + newBlogDto.title());
+        // Mapping von BlogDtos.NewBlogDto zu Blog
+        var blog = newBlogDto.toBlog();
+        blogRepository.persist(newBlogDto.toBlog());
+        return blog.getId();
     }
 
     @Transactional
