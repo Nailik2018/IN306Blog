@@ -27,4 +27,9 @@ public class Author {
     @NotBlank
     @Size(min = 2, max = 128)
     private String lastname;
+
+    public Author(String firstname, String lastname){
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
 }

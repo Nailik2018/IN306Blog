@@ -1,10 +1,11 @@
 package ch.hftm.blog.control.dto;
 
 import ch.hftm.blog.entity.Blog;
+import jakarta.validation.constraints.NotBlank;
 
 public interface BlogDto {
 
-    public record NewBlogDto(String title, String content) {
+    public record NewBlogDto(@NotBlank String title, String content) {
         public Blog toBlog() {
             return new Blog(title, content);
         }

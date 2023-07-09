@@ -1,5 +1,6 @@
 package ch.hftm.blog.control;
 
+import ch.hftm.blog.control.dto.AuthorDto;
 import ch.hftm.blog.entity.Author;
 import jakarta.enterprise.context.Dependent;
 import jakarta.inject.Inject;
@@ -37,6 +38,14 @@ public class AuthorService {
     public void addAuthor(Author author){
         logger.info("Author hinzufügen: " + author.getFirstname() + " " + author.getLastname());
         authorRepository.persist(author);
+    }
+
+    @Transactional
+    public long addAuthorDto(AuthorDto.NewAuthorDto newAuthorDto){
+        logger.info("Author hinzufügen: " + newAuthorDto.firstname() + " " + newAuthorDto.lastname());
+        var author = newAuthorDto.toAuthor();
+        authorRepository.persist(newAuthorDto.toAuthor());
+        return author.getId();
     }
 
     @Transactional
