@@ -1,9 +1,16 @@
 # IN306Blog
 
-## Version 0.4.0
+## Version 0.5.0
 Eigene Error Klasse,
 HeaderParameter,
-Put war bereits drin Version 0.3.0
+Put war bereits drin Version 0.5.0
+CRUD Blog und Author, POST, DELETE, PUT und GET
+DTOs
+Swagger
+Dockerfile
+Docker-compose.yml
+Docker image und container mysql und phpmyadmin
+mysql port 3307
 
 ## Bedienung per URL GET
 http://localhost:8080/blogs/1
@@ -21,7 +28,6 @@ cmd öffnen
 cd ins Verzeichnis Dockerfile und docker-compose.yml navigieren
 docker compose up -d
 phpmyadmin im Webbrowser http://localhost:8181/
-## Version 0.3.0
 ### Features
 SWAGGER, CRUD Blog und Author, POST, DELETE, PUT und GET
 
