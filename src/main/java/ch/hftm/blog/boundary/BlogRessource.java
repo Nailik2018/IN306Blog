@@ -65,7 +65,7 @@ public class BlogRessource {
 //    }
 
     @Operation(description = "Add a new Blog")
-    @RequestBody(content  = @Content(example="{\"title\": \"string\"}"),description = "The new Blog", required = true)
+    @RequestBody(content  = @Content(example="{message: string, username: }"),description = "The new Blog", required = true)
     @APIResponse(responseCode = "201", description = "Jupii new Blog created :-)")
     @APIResponse(responseCode = "418", description = "Ich bin ein Tea Pot :-(")
     @POST
