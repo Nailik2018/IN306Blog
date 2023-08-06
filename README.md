@@ -1,10 +1,11 @@
 # IN306Blog
 
-## Version 0.5.0
+## Version 0.6.0
+
 Eigene Error Klasse,
 HeaderParameter,
 Put war bereits drin Version 0.5.0
-CRUD Blog und Author, POST, DELETE, PUT und GET
+CRUD Author, Blog und Comments, POST, DELETE, PUT und GET
 DTOs
 Swagger
 Dockerfile
@@ -48,8 +49,6 @@ http://localhost:8080/q/swagger-ui/
 
 ## Bedienung per URL Docker
 http://localhost:8181/ (phpmyadmin)
-
-
 
 ## Technologies
 docker image und container mysql und phpmyadmin
