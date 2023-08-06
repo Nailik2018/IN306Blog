@@ -17,6 +17,39 @@ http://localhost:8080/blogs/1
 http://localhost:8080/blogs
 http://localhost:8080/author
 http://localhost:8080/author/1
+http://localhost:8080/comment
+http://localhost:8080/comment/1
+
+## Bedienung per URL POST  
+http://localhost:8080/blogs     (JSON Body)
+http://localhost:8080/author    (JSON Body)
+http://localhost:8080/comment   (JSON Body)
+
+## Bedienung per URL PUT    
+http://localhost:8080/blogs/1   (JSON Body)
+http://localhost:8080/author/1  (JSON Body)
+http://localhost:8080/comment/1 (JSON Body)
+
+## Bedienung per URL DELETE
+http://localhost:8080/blogs/1
+http://localhost:8080/author/1  
+http://localhost:8080/comment/1
+
+## Bedienung per URL HeaderParameter
+http://localhost:8080/blogs/1
+http://localhost:8080/blogs
+http://localhost:8080/author
+http://localhost:8080/author/1
+http://localhost:8080/comment
+http://localhost:8080/comment/1
+
+## Bedienung per URL Swagger
+http://localhost:8080/q/swagger-ui/
+
+## Bedienung per URL Docker
+http://localhost:8181/ (phpmyadmin)
+
+
 
 ## Technologies
 docker image und container mysql und phpmyadmin

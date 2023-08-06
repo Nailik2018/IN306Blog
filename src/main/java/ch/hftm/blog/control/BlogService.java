@@ -10,13 +10,13 @@ import org.jboss.logging.Logger;
 import jakarta.enterprise.context.Dependent;
 import jakarta.inject.Inject;
 
-@Dependent
+@Dependent // Dependency Injection
 public class BlogService {
 
-    @Inject
+    @Inject // Dependency Injection
     BlogRepository blogRepository;
 
-    @Inject
+    @Inject // Dependency Injection
     Logger logger;
 
     public List<Blog> getBlogs() {
@@ -35,13 +35,13 @@ public class BlogService {
         return blogs;
     }
 
-    @Transactional
+    @Transactional // Transaktion wird automatisch gestartet und beendet neuer Blog hinzufügen
     public void addBlog(Blog blog) {
         logger.info("Blog hinzufügen: " + blog.getTitle());
         blogRepository.persist(blog);
     }
 
-    @Transactional
+    @Transactional // Transaktion wird automatisch gestartet und beendet neuer Blog hinzufügen dto
     public long addBlogDto(BlogDto.NewBlogDto newBlogDto) {
         logger.info("Blog hinzufügen: " + newBlogDto.title());
         // Mapping von BlogDtos.NewBlogDto zu Blog
@@ -50,13 +50,13 @@ public class BlogService {
         return blog.getId();
     }
 
-    @Transactional
+    @Transactional //   Transaktion wird automatisch gestartet und beendet blog ändern
     public void updateBlog(Blog blog) {
         blogRepository.persist(blog);
         logger.info("Blog updaten: " + blog.getId());
     }
 
-    @Transactional
+    @Transactional // Transaktion wird automatisch gestartet und beendet blog löschen
     public void deleteBlog(Long id) {
         Blog blog = (Blog) blogRepository.findById(id);
         if (blog != null) {
