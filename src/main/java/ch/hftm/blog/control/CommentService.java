@@ -1,6 +1,7 @@
 package ch.hftm.blog.control;
 
 import ch.hftm.blog.control.dto.BlogDto;
+import ch.hftm.blog.control.dto.CommentDto;
 import ch.hftm.blog.entity.Blog;
 import ch.hftm.blog.entity.Comment;
 import jakarta.enterprise.context.Dependent;
@@ -41,14 +42,14 @@ public class CommentService {
         commentRepository.persist(comment);
     }
 
-//    @Transactional
-//    public long addCommentDto(BlogDto.NewBlogDto newBlogDto) {
-//        logger.info("Blog hinzufügen: " + newBlogDto.title());
-//        // Mapping von BlogDtos.NewBlogDto zu Blog
-//        var comments = newBlogDto.toBlog();
-//        commentRepository.persist(newCommentDto.toBlog());
-//        return comments.getId();
-//    }
+    @Transactional
+    public long addCommentDto(CommentDto.NewCommentDto newCommentDto) {
+        logger.info("Blog hinzufügen: " + newCommentDto.message());
+        // Mapping von CommentDto.NewCommentDto zu Comment
+        var comments = newCommentDto.toComment();
+        commentRepository.persist(newCommentDto.toComment());
+        return comments.getId();
+    }
 
     @Transactional
     public void updateComment(Comment comment) {

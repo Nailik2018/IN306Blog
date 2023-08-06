@@ -49,7 +49,6 @@ public class DataInitialization {
         Blog blog3 = new Blog();
         blog3.setTitle("Gleitschirmferien in Bosnien und Herzegowina");
         blog3.setContent("Gleitschirmfliegen in Bosnien und Herzegowina");
-
         blog1.setAuthor(kilian);
         blog2.setAuthor(max);
         blog3.setAuthor(kilian);
@@ -73,11 +72,9 @@ public class DataInitialization {
         commentService.addComment(comment2);
         commentService.addComment(comment3);
 
-
-
-//        blog1.addComment(comment1);
-//        blog2.addComment(comment2);
-//        blog3.addComment(comment3);
+        blog1.addComment(comment1);
+        blog2.addComment(comment2);
+        blog1.addComment(comment3);
         blogService.addBlog(blog1);
         blogService.addBlog(blog2);
         blogService.addBlog(blog3);

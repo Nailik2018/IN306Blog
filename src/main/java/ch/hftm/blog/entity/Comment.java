@@ -27,6 +27,7 @@ public class Comment {
     private Date date;
 
     @ManyToOne
+    @JsonbTransient
     private Blog blog;
 
     public Comment(String message, String username, Date date) {
