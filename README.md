@@ -13,6 +13,9 @@ Docker-compose.yml
 Docker image und container mysql und phpmyadmin
 mysql port 3307
 
+## Starten
+./mvnw quarkus:dev
+
 ## Bedienung per URL GET
 http://localhost:8080/blogs/1
 http://localhost:8080/blogs
@@ -46,6 +49,12 @@ http://localhost:8080/comment/1
 
 ## Bedienung per URL Swagger
 http://localhost:8080/q/swagger-ui/
+
+## Keycloak
+name => rollen => password
+alice => admin, user => alice
+bob => author => bob
+u1 => user => user => u1
 
 ## Bedienung per URL Docker
 http://localhost:8181/ (phpmyadmin)
