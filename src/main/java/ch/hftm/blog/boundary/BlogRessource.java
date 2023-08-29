@@ -34,7 +34,7 @@ public class BlogRessource {
 //        return blogService.getBlogs();
 //    }
 
-    @RolesAllowed("admin")
+//    @RolesAllowed("admin")
     @GET
     public List<Blog> getEntries(@QueryParam("search") String search, @HeaderParam("password") String password) {
         System.out.println("Password: " + password);
@@ -52,6 +52,7 @@ public class BlogRessource {
     }
 
 //    @Tag(name="Blog Get by ID")
+    @RolesAllowed("admin")
     @GET
     @Path("{id}")
     public Blog getBlogById(@PathParam("id") Long id) {
@@ -66,7 +67,7 @@ public class BlogRessource {
 //        return Response.ok().entity(blog).header(name:"info", value:"Bitter version 2 Vewrenwnden").build();
 //    }
 
-    @RolesAllowed("admin")
+//    @RolesAllowed("admin")
     @Operation(description = "Add a new Blog")
     @RequestBody(content  = @Content(example="{message: string, username: }"),description = "The new Blog", required = true)
     @APIResponse(responseCode = "201", description = "Jupii new Blog created :-)")
