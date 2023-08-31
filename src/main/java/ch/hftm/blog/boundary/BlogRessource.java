@@ -4,6 +4,7 @@ import ch.hftm.blog.control.BlogService;
 import ch.hftm.blog.control.dto.BlogDto;
 import ch.hftm.blog.entity.Blog;
 import ch.hftm.blog.errors.BlogException;
+import io.quarkus.security.Authenticated;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
@@ -53,6 +54,7 @@ public class BlogRessource {
 
 //    @Tag(name="Blog Get by ID")
     @RolesAllowed("admin")
+//    @Authenticated
     @GET
     @Path("{id}")
     public Blog getBlogById(@PathParam("id") Long id) {
