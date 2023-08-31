@@ -23,6 +23,9 @@ public class DataInitialization {
     @Inject
     CommentService commentService;
 
+//    @Inject
+//    KeyGeneratorHelper keyGeneratorHelper;
+
     @Transactional
     public void init(@Observes StartupEvent event) {
         // Initialize Data (only if there is no Data around)
@@ -30,6 +33,9 @@ public class DataInitialization {
     }
 
     public void createSomeBlogsAndAuthors(){
+
+//        keyGeneratorHelper.generateKeys();
+//        keyGeneratorHelper.generateSessionToken("alice", "admin");
 
         Author kilian = new Author();
         kilian.setFirstname("Kilian");

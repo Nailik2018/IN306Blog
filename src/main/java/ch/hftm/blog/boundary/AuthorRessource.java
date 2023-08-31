@@ -4,6 +4,7 @@ import ch.hftm.blog.control.AuthorService;
 import ch.hftm.blog.control.dto.AuthorDto;
 import ch.hftm.blog.entity.Author;
 import ch.hftm.blog.errors.BlogException;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
@@ -37,6 +38,7 @@ public class AuthorRessource {
 //        return authorService.getAuthors();
 //    }
 
+    @RolesAllowed("admin")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Author> getAuthors(@QueryParam("search") String search, @HeaderParam("password") String password) {
