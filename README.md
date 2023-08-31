@@ -1,7 +1,8 @@
 # IN306Blog
 
-## Version 0.6.0
+## Version 0.7.0
 
+Authentifizierung mit Keycloak for Blogid
 Eigene Error Klasse,
 HeaderParameter,
 Put war bereits drin Version 0.5.0
