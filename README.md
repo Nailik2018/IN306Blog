@@ -1,7 +1,8 @@
 # IN306Blog
 
-## Version 0.7.0
-
+## Version 0.7.1
+Keycloak default Quarkus,
+Rollen User
 Authentifizierung mit Keycloak for Blogid
 Eigene Error Klasse,
 HeaderParameter,
