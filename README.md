@@ -1,6 +1,9 @@
 # IN306Blog
 
-## Version 0.7.1
+## Version 0.7.3
+
+Dev Port 8881 (application.properties)
+Prod Port 9090 (application.properties)
 Keycloak default Quarkus,
 Rollen User
 Authentifizierung mit Keycloak for Blogid
@@ -16,41 +19,43 @@ Docker image und container mysql und phpmyadmin
 mysql port 3307
 
 ## Starten
-./mvnw quarkus:dev
+```./mvnw quarkus:dev```
 
-## Bedienung per URL GET
-http://localhost:8080/blogs/1
-http://localhost:8080/blogs
-http://localhost:8080/author
-http://localhost:8080/author/1
-http://localhost:8080/comment
-http://localhost:8080/comment/1
+http://localhost:8881/q/dev-ui/io.quarkus.quarkus-oidc/keycloak-provider?state=CDsQcFs&session_state=66c516c5-ebf6-436d-aa45-4b8da2dedb02&code=0f10ce47-a480-434a-962a-bc757eba0451.66c516c5-ebf6-436d-aa45-4b8da2dedb02.dc4b672a-f24c-4f1c-986c-a4c871f0223d
+
+## Bedienung per URL GET Dev Mode
+http://localhost:8881/blogs/1
+http://localhost:8881/blogs
+http://localhost:8881/author
+http://localhost:8881/author/1
+http://localhost:8881/comment
+http://localhost:8881/comment/1
 
 ## Bedienung per URL POST  
-http://localhost:8080/blogs     (JSON Body)
-http://localhost:8080/author    (JSON Body)
-http://localhost:8080/comment   (JSON Body)
+http://localhost:8881/blogs     (JSON Body)
+http://localhost:8881/author    (JSON Body)
+http://localhost:8881/comment   (JSON Body)
 
 ## Bedienung per URL PUT    
-http://localhost:8080/blogs/1   (JSON Body)
-http://localhost:8080/author/1  (JSON Body)
-http://localhost:8080/comment/1 (JSON Body)
+http://localhost:8881/blogs/1   (JSON Body)
+http://localhost:8881/author/1  (JSON Body)
+http://localhost:8881/comment/1 (JSON Body)
 
 ## Bedienung per URL DELETE
-http://localhost:8080/blogs/1
-http://localhost:8080/author/1  
-http://localhost:8080/comment/1
+http://localhost:8881/blogs/1
+http://localhost:8881/author/1  
+http://localhost:8881/comment/1
 
 ## Bedienung per URL HeaderParameter
-http://localhost:8080/blogs/1
-http://localhost:8080/blogs
-http://localhost:8080/author
-http://localhost:8080/author/1
-http://localhost:8080/comment
-http://localhost:8080/comment/1
+http://localhost:8881/blogs/1
+http://localhost:8881/blogs
+http://localhost:8881/author
+http://localhost:8881/author/1
+http://localhost:8881/comment
+http://localhost:8881/comment/1
 
 ## Bedienung per URL Swagger
-http://localhost:8080/q/swagger-ui/
+http://localhost:8881/q/swagger-ui/
 
 ## Keycloak
 name => rollen => password
@@ -75,7 +80,7 @@ phpmyadmin im Webbrowser http://localhost:8181/
 SWAGGER, CRUD Blog und Author, POST, DELETE, PUT und GET
 
 ## Swagger
-http://localhost:8080/q/swagger-ui/
+http://localhost:8881/q/swagger-ui/
 
 # code-with-quarkus
 
